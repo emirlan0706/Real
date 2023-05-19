@@ -32,7 +32,7 @@ function App() {
         setCartItems(cartResponse.data);
         setItems(itemsResponse.data);
       } catch (error) {
-        alert("error in get zapros");
+        alert("error in get zaproserd");
       }
     }
     fetchData();
