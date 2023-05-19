@@ -4,7 +4,6 @@ import Card from "../components/Card";
 const Home = ({
   items,
   searchValue,
-
   setSearchValue,
   onChangeSearchInput,
   onAddToFavorite,
