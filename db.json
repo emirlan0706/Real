@@ -1,191 +1,85 @@
 {
   "items": [
     {
-      "id": 1,
-      "title": "Мужские Кроссовки Nike Blazer Mid Suede",
-      "price": 12999,
-      "imageUrl": "/img/sneacers/1.jpg"
-    },
-    {
-      "id": 2,
-      "title": "Мужские Кроссовки Nike Air Max 270",
-      "price": 15600,
-      "imageUrl": "/img/sneacers/2.jpg"
+      "title": "Мужские Apple watchAir Max 270",
+      "imageUrl": "https://asiaexpress.kg/uploads/media/product_photo/0001/09/510372c1d24123ebc6a160070366ad35e41f4360.png",
+      "price": "156001111111",
+      "id": 2
     },
     {
       "id": 3,
-      "title": "Мужские Кроссовки Nike Blazer Mid Suede",
+      "title": "Мужские Apple watch Mid Suede",
       "price": 16999,
-      "imageUrl": "/img/sneacers/3.jpg"
+      "imageUrl": "https://asiaexpress.kg/uploads/media/product_photo/0001/09/510372c1d24123ebc6a160070366ad35e41f4360.png",
+      "category": "Apple watch"
     },
     {
-      "id": 4,
-      "title": "Кроссовки Puma X Aka Boku Future Rider",
-      "price": 15899,
-      "imageUrl": "/img/sneacers/4.jpg"
+      "title": "Кроссовки Apple watch Future Rider",
+      "imageUrl": "https://asiaexpress.kg/uploads/media/product_photo/0001/09/510372c1d24123ebc6a160070366ad35e41f4360.png",
+      "price": 1589,
+      "id": 4
     },
     {
-      "id": 5,
       "title": "Мужские Кроссовки Under Armour Curry 8",
-      "price": 19000,
-      "imageUrl": "/img/sneacers/5.jpg"
+      "imageUrl": "https://asiaexpress.kg/uploads/media/product_photo/0001/09/510372c1d24123ebc6a160070366ad35e41f4360.png",
+      "price": 190,
+      "id": 5
     },
     {
-      "id": 6,
-      "title": "Мужские Кроссовки Nike Kyrie 7",
+      "title": "Мужские Casio watch",
+      "imageUrl": "https://asiaexpress.kg/uploads/media/product_photo/0001/09/510372c1d24123ebc6a160070366ad35e41f4360.png",
       "price": 10500,
-      "imageUrl": "/img/sneacers/6.jpg"
+      "id": 6
     },
     {
-      "id": 7,
       "title": "Мужские Кроссовки Jordan Air Jordan 11",
-      "price": 18900,
-      "imageUrl": "/img/sneacers/7.jpg"
+      "imageUrl": "https://asiaexpress.kg/uploads/media/product_photo/0001/09/510372c1d24123ebc6a160070366ad35e41f4360.png",
+      "price": "18900555",
+      "id": 7
     },
     {
-      "id": 8,
       "title": "Мужские Кроссовки Nike LeBron XVIII",
+      "imageUrl": "https://asiaexpress.kg/uploads/media/product_photo/0001/09/510372c1d24123ebc6a160070366ad35e41f4360.png",
       "price": 15999,
-      "imageUrl": "/img/sneacers/8.jpg"
+      "id": 8
     },
     {
-      "id": 9,
-      "title": "Кроссовки Puma X Aka Boku Future Rider",
-      "price": 15899,
-      "imageUrl": "/img/sneacers/4.jpg"
+      "id": 9
     },
     {
       "id": 10,
       "title": "Кроссовки Puma X Aka Boku Future Rider",
       "price": 15899,
-      "imageUrl": "/img/sneacers/4.jpg"
+      "imageUrl": "https://asiaexpress.kg/uploads/media/product_photo/0001/09/510372c1d24123ebc6a160070366ad35e41f4360.png"
     },
     {
       "id": 11,
       "title": "Кроссовки Puma X Aka Boku Future Rider",
       "price": 15899,
-      "imageUrl": "/img/sneacers/4.jpg"
+      "imageUrl": "https://asiaexpress.kg/uploads/media/product_photo/0001/09/510372c1d24123ebc6a160070366ad35e41f4360.png"
     },
     {
-      "id": 12,
       "title": "Кроссовки Puma X Aka Boku Future Rider",
+      "imageUrl": "https://asiaexpress.kg/uploads/media/product_photo/0001/09/510372c1d24123ebc6a160070366ad35e41f4360.png",
       "price": 15899,
-      "imageUrl": "/img/sneacers/4.jpg"
+      "id": 12
     },
     {
       "id": 13,
       "title": "Кроссовки Puma X Aka Boku Future Rider",
       "price": 15899,
-      "imageUrl": "/img/sneacers/4.jpg"
+      "imageUrl": "https://asiaexpress.kg/uploads/media/product_photo/0001/09/510372c1d24123ebc6a160070366ad35e41f4360.png"
     },
     {
       "id": 14,
       "title": "Кроссовки Puma X Aka Boku Future Rider",
       "price": 15899,
-      "imageUrl": "/img/sneacers/4.jpg"
-    },
-    {
-      "id": 15,
-      "title": "Кроссовки Puma X Aka Boku Future Rider",
-      "price": 15899,
-      "imageUrl": "/img/sneacers/4.jpg"
-    },
-    {
-      "id": 16,
-      "title": "Кроссовки Puma X Aka Boku Future Rider",
-      "price": 15899,
-      "imageUrl": "/img/sneacers/4.jpg"
-    },
-    {
-      "id": 17,
-      "title": "Кроссовки Puma X Aka Boku Future Rider",
-      "price": 15899,
-      "imageUrl": "/img/sneacers/4.jpg"
+      "imageUrl": "https://asiaexpress.kg/uploads/media/product_photo/0001/09/510372c1d24123ebc6a160070366ad35e41f4360.png"
     }
   ],
   "cart": [],
   "favorites": [],
-  "orders": [
-    {
-      "items": [
-        {
-          "id": 1,
-          "title": "Мужские Кроссовки Nike Blazer Mid Suede",
-          "imageUrl": "/img/sneacers/1.jpg",
-          "price": 12999
-        },
-        {
-          "id": 2,
-          "title": "Мужские Кроссовки Nike Air Max 270",
-          "imageUrl": "/img/sneacers/2.jpg",
-          "price": 15600
-        }
-      ],
-      "id": 1
-    },
-    {
-      "items": [
-        {
-          "id": 4,
-          "title": "Кроссовки Puma X Aka Boku Future Rider",
-          "imageUrl": "/img/sneacers/4.jpg",
-          "price": 15899
-        },
-        {
-          "id": 3,
-          "title": "Мужские Кроссовки Nike Blazer Mid Suede",
-          "imageUrl": "/img/sneacers/3.jpg",
-          "price": 16999
-        },
-        {
-          "id": 2,
-          "title": "Мужские Кроссовки Nike Air Max 270",
-          "imageUrl": "/img/sneacers/2.jpg",
-          "price": 15600
-        }
-      ],
-      "id": 2
-    },
-    {
-      "items": [
-        {
-          "id": 2,
-          "title": "Мужские Кроссовки Nike Air Max 270",
-          "imageUrl": "/img/sneacers/2.jpg",
-          "price": 15600
-        }
-      ],
-      "id": 3
-    },
-    {
-      "items": [
-        {
-          "id": 3,
-          "title": "Мужские Кроссовки Nike Blazer Mid Suede",
-          "imageUrl": "/img/sneacers/3.jpg",
-          "price": 16999
-        },
-        {
-          "id": 2,
-          "title": "Мужские Кроссовки Nike Air Max 270",
-          "imageUrl": "/img/sneacers/2.jpg",
-          "price": 15600
-        }
-      ],
-      "id": 4
-    },
-    {
-      "items": [
-        {
-          "id": 3,
-          "title": "Мужские Кроссовки Nike Blazer Mid Suede",
-          "imageUrl": "/img/sneacers/3.jpg",
-          "price": 16999
-        }
-      ],
-      "id": 5
-    }
-  ],
+  "orders": [],
   "profile": {
     "name": "typicode"
   }

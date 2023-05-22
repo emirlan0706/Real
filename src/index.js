@@ -4,12 +4,14 @@ import "./index.scss";
 import "macro-css";
 import App from "./App";
 import { BrowserRouter } from "react-router-dom";
+import AddProduct from "./addProduct/AddProduct";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
       <App />
+      <AddProduct />
     </BrowserRouter>
   </React.StrictMode>
 );

@@ -12,10 +12,15 @@ const Header = (props) => {
     <header className="d-flex justify-between align-center p-40">
       <Link to={"/"}>
         <div className="d-flex align-center">
-          <img width={40} height={40} src="/img/logo.png" alt="Logotype" />
+          <img
+            width={40}
+            height={40}
+            src="https://cdn-icons-png.flaticon.com/128/5844/5844673.png"
+            alt="Logotype"
+          />
           <div>
-            <h3>REACT SNEAKERS</h3>
-            <p className="opacity-5">Магазин лучших кроссовок</p>
+            <h3>Swiss Time</h3>
+            <p className="opacity-5">Наручные часы всех известных брендов</p>
           </div>
         </div>
       </Link>

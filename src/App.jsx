@@ -3,12 +3,14 @@ import Header from "./components/Header";
 import Drawer from "./Draver";
 import Home from "./pages/Home";
 import Favorite from "./pages/Favorite";
+import EditItemForm from "../src/components/Card/EditItemForm";
 
-import { createContext, useState } from "react";
+import { useState } from "react";
 import { useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import AppContext from "./context";
 import Orders from "./pages/Orders";
+import Card from "./components/Card";
 
 function App() {
   let APIITEMS = " http://localhost:8000/items";
@@ -37,6 +39,18 @@ function App() {
     }
     fetchData();
   }, []);
+
+  const [editingItemId, setEditingItemId] = useState(null);
+
+  // Function to handle editing an item
+  const handleEditItem = (itemId) => {
+    setEditingItemId(itemId);
+  };
+
+  // Function to handle closing the edit form
+  const handleCloseEditForm = () => {
+    setEditingItemId(null);
+  };
 
   const onAddToCart = async (obj) => {
     try {
@@ -92,6 +106,7 @@ function App() {
     <AppContext.Provider
       value={{
         items,
+        setItems,
         cartItems,
         favorites,
         isItemAdded,
