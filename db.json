@@ -38,12 +38,6 @@
       "id": 7
     },
     {
-      "title": "Мужские Кроссовки Nike LeBron XVIII",
-      "imageUrl": "https://asiaexpress.kg/uploads/media/product_photo/0001/09/510372c1d24123ebc6a160070366ad35e41f4360.png",
-      "price": 15999,
-      "id": 8
-    },
-    {
       "id": 9
     },
     {
@@ -82,6 +76,13 @@
       "imageUrl": "34",
       "category": "Mi watch",
       "id": 15
+    },
+    {
+      "title": "fdg",
+      "price": "asgaeg",
+      "imageUrl": "gsagaw",
+      "category": "Apple watch",
+      "id": 16
     }
   ],
   "cart": [],
