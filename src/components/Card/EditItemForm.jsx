@@ -55,7 +55,7 @@ function EditItemForm({ itemId, onClose }) {
         price: parseInt(price), // Parse the price as an integer
         category,
       });
-      onClose(); // Close the edit form
+      closeModal(); // Close the edit form
     } catch (error) {
       console.log("Error updating item", error);
     }

@@ -14,7 +14,6 @@ const Home = ({
   setSearchValue,
   onChangeSearchInput,
   onAddToFavorite,
-
   onAddToCart,
 }) => {
   const [editingItemId, setEditingItemId] = useState(null);
@@ -52,11 +51,11 @@ const Home = ({
               <MenuItem value="">
                 <em></em>
               </MenuItem>
-              <MenuItem value={""}>All</MenuItem>
-              <MenuItem value={"Apple watch"}>Apple watch</MenuItem>
-              <MenuItem value={"Mi watch"}>Mi watch</MenuItem>
-              <MenuItem value={"Hublot watch"}>Hublot watch</MenuItem>
-              <MenuItem value={"Casio watch"}>Casio watch</MenuItem>
+              <MenuItem value="">All</MenuItem>
+              <MenuItem value="Apple watch">Apple watch</MenuItem>
+              <MenuItem value="Mi watch">Mi watch</MenuItem>
+              <MenuItem value="Hublot watch">Hublot watch</MenuItem>
+              <MenuItem value="Casio watch">Casio watch</MenuItem>
             </Select>
           </FormControl>
           <img src="/img/search.svg" alt="Search" />
@@ -80,9 +79,8 @@ const Home = ({
       <div className="d-flex flex-wrap">
         {items
           .filter((item) => item.title && item.title.includes(searchValue))
-
-          .map((item, index) => (
-            <div key={index}>
+          .map((item) => (
+            <div key={item.id}>
               {editingItemId === item.id ? (
                 <Modal show={true} onHide={handleCloseEditForm}>
                   <Modal.Header closeButton>
@@ -97,9 +95,9 @@ const Home = ({
                 </Modal>
               ) : (
                 <Card
-                  onFavorite={(obj) => onAddToFavorite(obj)}
-                  onPlus={(obj) => onAddToCart(obj)}
-                  onEdit={() => handleEditItem(item.id)}
+                  onFavorite={onAddToFavorite}
+                  onPlus={onAddToCart}
+                  onEdit={handleEditItem}
                   {...item}
                 />
               )}

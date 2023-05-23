@@ -41,7 +41,7 @@ function Card({
   };
 
   const onClickEdit = () => {
-    onEdit(id); // Call the onEdit prop function with the item's ID
+    onEdit(id);
   };
 
   useEffect(() => {
@@ -91,7 +91,7 @@ function Card({
               delete
             </button>
             <button
-              className={styles.edit} // New CSS class for the edit button
+              className={styles.editButton} // New CSS class for the edit button
               onClick={onClickEdit} // Call the onClickEdit function on button click
               alt="Edit"
             >

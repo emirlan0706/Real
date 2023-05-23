@@ -1,17 +1,11 @@
 {
   "items": [
     {
-      "title": "Мужские Apple watchAir Max 270",
-      "imageUrl": "https://asiaexpress.kg/uploads/media/product_photo/0001/09/510372c1d24123ebc6a160070366ad35e41f4360.png",
-      "price": "156001111111",
-      "id": 2
-    },
-    {
-      "id": 3,
       "title": "Мужские Apple watch Mid Suede",
-      "price": 16999,
       "imageUrl": "https://asiaexpress.kg/uploads/media/product_photo/0001/09/510372c1d24123ebc6a160070366ad35e41f4360.png",
-      "category": "Apple watch"
+      "price": 16999,
+      "category": "Apple watch",
+      "id": 3
     },
     {
       "title": "Кроссовки Apple watch Future Rider",
@@ -59,10 +53,10 @@
       "id": 12
     },
     {
-      "id": 13,
       "title": "Кроссовки Puma X Aka Boku Future Rider",
+      "imageUrl": "https://asiaexpress.kg/uploads/media/product_photo/0001/09/510372c1d24123ebc6a160070366ad35e41f4360.png",
       "price": 15899,
-      "imageUrl": "https://asiaexpress.kg/uploads/media/product_photo/0001/09/510372c1d24123ebc6a160070366ad35e41f4360.png"
+      "id": 13
     },
     {
       "id": 14,
@@ -78,9 +72,9 @@
       "id": 15
     },
     {
-      "title": "fdg",
-      "price": "asgaeg",
-      "imageUrl": "gsagaw",
+      "title": "let res ",
+      "price": "0666",
+      "imageUrl": "https://casio-mea.com/media/catalog/product/cache/1b497d12e38f25cd7ae63e2dcdbd2c67/_/0/_0010_gma-s120gs-8a_1.webp",
       "category": "Apple watch",
       "id": 16
     }

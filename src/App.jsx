@@ -3,17 +3,14 @@ import Header from "./components/Header";
 import Drawer from "./Draver";
 import Home from "./pages/Home";
 import Favorite from "./pages/Favorite";
-import EditItemForm from "../src/components/Card/EditItemForm";
 
-import { useState } from "react";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import AppContext from "./context";
 import Orders from "./pages/Orders";
-import Card from "./components/Card";
 
 function App() {
-  let APIITEMS = " http://localhost:8000/items";
+  let APIITEMS = "http://localhost:8000/items";
   let APICART = "http://localhost:8000/cart";
   let APIFAVORITES = "http://localhost:8000/favorites";
 
@@ -34,7 +31,7 @@ function App() {
         setCartItems(cartResponse.data);
         setItems(itemsResponse.data);
       } catch (error) {
-        alert("error in get zaproserd");
+        alert("Error in GET request");
       }
     }
     fetchData();
@@ -42,12 +39,10 @@ function App() {
 
   const [editingItemId, setEditingItemId] = useState(null);
 
-  // Function to handle editing an item
   const handleEditItem = (itemId) => {
     setEditingItemId(itemId);
   };
 
-  // Function to handle closing the edit form
   const handleCloseEditForm = () => {
     setEditingItemId(null);
   };
@@ -64,7 +59,7 @@ function App() {
         setCartItems((prev) => [...prev, obj]);
       }
     } catch (error) {
-      alert("await in cart");
+      alert("Error in cart operation");
     }
   };
 
@@ -72,20 +67,19 @@ function App() {
     setSearchValue(event.target.value);
   };
 
-  const onRemoveItem = (id) => {
+  const onRemoveItem = async (id) => {
     try {
-      axios.delete(`${APICART}/${id}`);
+      await axios.delete(`${APICART}/${id}`);
       setCartItems((prev) => prev.filter((item) => item.id !== id));
     } catch (error) {
-      alert("error in delete cart");
+      alert("Error in deleting cart item");
     }
   };
 
   const onAddToFavorite = async (obj) => {
-    console.log(obj);
     try {
       if (favorites.find((favObj) => Number(favObj.id) === Number(obj.id))) {
-        axios.delete(`${APIFAVORITES}/${obj.id}`);
+        await axios.delete(`${APIFAVORITES}/${obj.id}`);
         setFavorites((prev) =>
           prev.filter((item) => Number(item.id) !== Number(obj.id))
         );
@@ -94,7 +88,7 @@ function App() {
         setFavorites((prev) => [...prev, data]);
       }
     } catch (error) {
-      alert("no favorites");
+      alert("Error in favorite operation");
     }
   };
 
@@ -135,14 +129,11 @@ function App() {
                 searchValue={searchValue}
                 onChangeSearchInput={onChangeSearchInput}
                 onAddToFavorite={onAddToFavorite}
-                onAddToCart={(obj) => {
-                  onAddToCart(obj);
-                }}
+                onAddToCart={onAddToCart}
               />
             }
           />
           <Route path="/favorites" element={<Favorite />} />
-
           <Route path="/orders" element={<Orders />} />
         </Routes>
       </div>
