@@ -1,20 +1,24 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import Modal from "react-modal";
+import {
+  Modal,
+  Box,
+  Typography,
+  TextField,
+  Button,
+  FormControl,
+  InputLabel,
+  Select,
+  MenuItem,
+} from "@mui/material";
 
-// Add a custom style for the modal
 const customModalStyles = {
-  overlay: {
-    backgroundColor: "rgba(0, 0, 0, 0.5)",
-  },
-  content: {
-    width: "400px",
-    height: "300px",
-    margin: "auto",
-    border: "1px solid #ccc",
-    borderRadius: "4px",
-    padding: "20px",
-  },
+  width: "400px",
+  height: "350px",
+
+  border: "none",
+
+  padding: "20px",
 };
 
 function EditItemForm({ itemId, onClose }) {
@@ -23,7 +27,8 @@ function EditItemForm({ itemId, onClose }) {
   const [price, setPrice] = useState("");
   const [category, setCategory] = useState("");
   const [isLoading, setIsLoading] = useState(true);
-  const [isModalOpen, setIsModalOpen] = useState(true); // Track the open/close state of the modal
+  const [isModalOpen, setIsModalOpen] = useState(true);
+  const [rest, setRest] = useState([]);
 
   useEffect(() => {
     async function fetchItem() {
@@ -52,10 +57,10 @@ function EditItemForm({ itemId, onClose }) {
       await axios.put(`http://localhost:8000/items/${itemId}`, {
         title,
         imageUrl,
-        price: parseInt(price), // Parse the price as an integer
+        price: parseInt(price),
         category,
       });
-      onClose(); // Close the edit form
+      closeModal();
     } catch (error) {
       console.log("Error updating item", error);
     }
@@ -63,52 +68,92 @@ function EditItemForm({ itemId, onClose }) {
 
   const closeModal = () => {
     setIsModalOpen(false);
-    onClose(); // Close the edit form
+    onClose();
   };
 
   return (
     <Modal
-      isOpen={isModalOpen}
-      onRequestClose={closeModal}
-      style={customModalStyles}
-      contentLabel="Edit Item"
+      open={isModalOpen}
+      onClose={closeModal}
+      aria-labelledby="edit-item-modal-title"
     >
-      {isLoading ? (
-        <p>Loading...</p>
-      ) : (
-        <form onSubmit={handleFormSubmit}>
-          <label>
-            Title:
-            <input value={title} onChange={(e) => setTitle(e.target.value)} />
-          </label>
-          <label>
-            Image URL:
-            <input
-              type="text"
+      <Box
+        sx={{
+          ...customModalStyles,
+          backgroundColor: "white",
+          borderColor: "white",
+          marginTop: "110px",
+          marginLeft: "auto",
+          marginRight: "auto",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        {isLoading ? (
+          <Typography variant="body1">Loading...</Typography>
+        ) : (
+          <form onSubmit={handleFormSubmit}>
+            <TextField
+              label="Title"
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+              fullWidth
+              margin="normal"
+            />
+            <TextField
+              label="Image URL"
               value={imageUrl}
               onChange={(e) => setImageUrl(e.target.value)}
+              fullWidth
+              margin="normal"
             />
-          </label>
-          <label>
-            Category:
-            <input
-              type="text"
-              value={category}
-              onChange={(e) => setCategory(e.target.value)}
-            />
-          </label>
-          <label>
-            Price:
-            <input
-              type="text"
+            <TextField
+              label="Price"
               value={price}
               onChange={(e) => setPrice(e.target.value)}
+              fullWidth
+              margin="normal"
             />
-          </label>
-          <button type="submit">Update</button>
-          <button onClick={closeModal}>Cancel</button>
-        </form>
-      )}
+
+            <FormControl sx={{ m: 1, minWidth: 410 }} size="small">
+              <InputLabel id="demo-select-small-label">Category</InputLabel>
+              <Select
+                labelId="demo-select-small-label"
+                id="category"
+                name="category"
+                value={category}
+                label="Category"
+                onChange={(e) => setCategory(e.target.value)}
+                fullWidth
+                margin="normal"
+              >
+                <MenuItem value="">
+                  <em>None</em>
+                </MenuItem>
+                <MenuItem value={"Casio"}>Casio</MenuItem>
+                <MenuItem value={"Apple watch"}>Apple watch</MenuItem>
+                <MenuItem value={"Mi watch"}>Mi watch</MenuItem>
+                <MenuItem value={"Hublot watch"}>Hublot watch</MenuItem>
+              </Select>
+            </FormControl>
+
+            <Button
+              sx={{ display: "flex", justifyContent: "flex-end" }}
+              type="submit"
+              variant="contained"
+              color="success"
+            >
+              Save
+            </Button>
+            <Button onClick={closeModal} variant="contained" color="error">
+              Cancel
+            </Button>
+          </form>
+        )}
+        {setRest}
+      </Box>
     </Modal>
   );
 }
