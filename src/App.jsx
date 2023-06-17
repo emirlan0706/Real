@@ -4,7 +4,11 @@ import Drawer from "./Draver";
 import Home from "./pages/Home";
 import Favorite from "./pages/Favorite";
 
-import { useState, useEffect } from "react";
+import EditItemForm from "./components/Card/";
+import AddProduct from "./addProduct/AddProduct";
+import { useState } from "react";
+import { useEffect } from "react";
+
 import { Routes, Route } from "react-router-dom";
 import AppContext from "./context";
 import Orders from "./pages/Orders";
@@ -14,7 +18,7 @@ function App() {
   let APICART = "http://localhost:8000/cart";
   let APIFAVORITES = "http://localhost:8000/favorites";
 
-  const [items, setItems] = useState([]);
+  const [items, setItems] = useState([""]);
   const [cartItems, setCartItems] = useState([]);
   const [favorites, setFavorites] = useState([]);
   const [searchValue, setSearchValue] = useState("");
@@ -135,6 +139,8 @@ function App() {
           />
           <Route path="/favorites" element={<Favorite />} />
           <Route path="/orders" element={<Orders />} />
+
+          <Route path="/add" element={<AddProduct />} />
         </Routes>
       </div>
     </AppContext.Provider>

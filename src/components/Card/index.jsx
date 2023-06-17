@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import AppContext from "../../context";
 import styles from "./Card.module.scss";
 import ContentLoader from "react-content-loader";
@@ -31,7 +31,7 @@ function Card({
       await axios.delete(`${API_ITEMS}/${itemId}`);
       setItems(items.filter((item) => item.id !== itemId));
     } catch (error) {
-      console.log("Ошибка при удалении товара", error);
+      console.log("Error deleting item", error);
     }
   };
 
@@ -45,7 +45,11 @@ function Card({
   };
 
   useEffect(() => {
-    setIsLoading(false);
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
+
+    return () => clearTimeout(timer);
   }, []);
 
   return (
@@ -83,20 +87,25 @@ function Card({
               <span>Цена:</span>
               <b>{price} руб.</b>
             </div>
-            <button
+            <img
+              width={31}
+              height={31}
+              src="/img/deleteCard.svg"
               className={styles.delete}
               onClick={() => onClickDelete(id)}
               alt="Delete"
-            >
-              delete
-            </button>
-            <button
+
+
+            />
+            <img
+              width={31}
+              height={31}
+              src="/img/redactor.svg"
+
               className={styles.editButton} // New CSS class for the edit button
               onClick={onClickEdit} // Call the onClickEdit function on button click
               alt="Edit"
-            >
-              edit
-            </button>
+            />
             {onPlus && (
               <img
                 className={styles.plus}

@@ -5,6 +5,8 @@ import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
+import { Link } from "react-router-dom";
+import AppContext from "../context";
 
 let APIITEMS = " http://localhost:8000/items";
 
@@ -60,73 +62,82 @@ const AddProductForm = () => {
   };
 
   return (
-    <div className={styles.container}>
-      <h2>Add a Product</h2>
-      <form onSubmit={handleSubmit} className={styles.form}>
-        <label htmlFor="title" className={styles.label}>
-          Title
-        </label>
-        <input
-          type="text"
-          id="title"
-          name="title"
-          value={title}
-          onChange={handleInputChange}
-          className={styles.input}
-        />
-
-        <label htmlFor="price" className={styles.label}>
-          Price
-        </label>
-        <input
-          type="text"
-          id="price"
-          name="price"
-          value={price}
-          onChange={handleInputChange}
-          className={styles.input}
-        />
-
-        <label htmlFor="imageUrl" className={styles.label}>
-          Image URL
-        </label>
-        <input
-          type="text"
-          id="imageUrl"
-          name="imageUrl"
-          value={imageUrl}
-          onChange={handleInputChange}
-          className={styles.input}
-        />
-
-        <label htmlFor="category" className={styles.label}>
-          Category
-        </label>
-
-        <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
-          <InputLabel id="demo-select-small-label">Age</InputLabel>
-          <Select
-            labelId="demo-select-small-label"
-            id="category"
-            name="category"
-            value={category}
-            label="Age"
-            onChange={handleInputChange}
-            className={styles.input}
-          >
-            <MenuItem value="">
-              <em>None</em>
-            </MenuItem>
-            <MenuItem value={"Casio"}>Casio</MenuItem>
-            <MenuItem value={"Apple watch"}>Apple watch</MenuItem>
-            <MenuItem value={"Mi watch"}>Mi watch</MenuItem>
-          </Select>
-        </FormControl>
-
-        <button type="submit" className={styles.button}>
-          Add Product
-        </button>
-      </form>
+    <div>
+      <div className="content p-40">
+        <div className="d-flex align-center justify-between mb-40">
+          <h1>
+            <Link to={"/"}>
+              <img src="/img/prev1.png" alt="nazad" className="prev1" />
+              Add Product
+            </Link>
+          </h1>
+        </div>
+        <div className="grey">
+          <div className="{styles.container}">
+            <h2></h2>
+            <form onSubmit={handleSubmit} className={styles.form}>
+              <label htmlFor="title" className={styles.label}>
+                Title
+              </label>
+              <input
+                type="text"
+                id="title"
+                name="title"
+                value={title}
+                onChange={handleInputChange}
+                className="{styles.input} power"
+              />
+              <label htmlFor="price" className={styles.label}>
+                Price
+              </label>
+              <input
+                type="text"
+                id="price"
+                name="price"
+                value={price}
+                onChange={handleInputChange}
+                className="{styles.input} power"
+              />
+              <label htmlFor="imageUrl" className={styles.label}>
+                Image URL
+              </label>
+              <input
+                type="text"
+                id="imageUrl"
+                name="imageUrl"
+                value={imageUrl}
+                onChange={handleInputChange}
+                className="{styles.input} power"
+              />
+              <label htmlFor="category" className={styles.label}>
+                Category
+              </label>
+              <FormControl sx={{ m: 1, minWidth: 140 }} size="small">
+                <InputLabel id="demo-select-small-label">Category</InputLabel>
+                <Select
+                  labelId="demo-select-small-label"
+                  id="category"
+                  name="category"
+                  value={category}
+                  label="Age"
+                  onChange={handleInputChange}
+                  className={styles.input}
+                >
+                  <MenuItem value="">
+                    <em>None</em>
+                  </MenuItem>
+                  <MenuItem value={"Casio"}>Casio</MenuItem>
+                  <MenuItem value={"Apple watch"}>Apple watch</MenuItem>
+                  <MenuItem value={"Mi watch"}>Mi watch</MenuItem>
+                </Select>
+              </FormControl>
+              <button type="submit" className="{styles.button} prod">
+                Add Product
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
