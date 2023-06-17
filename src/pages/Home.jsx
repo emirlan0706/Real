@@ -96,7 +96,7 @@ const Home = ({
               marginRight: 5,
               border: "1px solid #fffff",
               ...(isSmallScreen && {
-                minWidth: "220px", // Adjust minWidth for small screens (375 width)
+                minWidth: "220px", // Aglkdnfgnsdgmsd;hlms;hs;hsd;
               }),
             }}
             size="small"
