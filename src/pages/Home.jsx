@@ -94,11 +94,11 @@ const Home = ({
               <MenuItem value="">
                 <em></em>
               </MenuItem>
-              <MenuItem value={""}>All</MenuItem>
-              <MenuItem value={"Apple watch"}>Apple watch</MenuItem>
-              <MenuItem value={"Mi watch"}>Mi watch</MenuItem>
-              <MenuItem value={"Hublot watch"}>Hublot watch</MenuItem>
-              <MenuItem value={"Casio watch"}>Casio watch</MenuItem>
+              <MenuItem value="">All</MenuItem>
+              <MenuItem value="Apple watch">Apple watch</MenuItem>
+              <MenuItem value="Mi watch">Mi watch</MenuItem>
+              <MenuItem value="Hublot watch">Hublot watch</MenuItem>
+              <MenuItem value="Casio watch">Casio watch</MenuItem>
             </Select>
           </FormControl>
           <img src="/img/search.svg" alt="Search" className="serhico" />
@@ -123,20 +123,26 @@ const Home = ({
       <div className="d-flex flex-wrap adptiveCard">
         {currentItems
           .filter((item) => item.title && item.title.includes(searchValue))
-          .map((item, index) => (
-            <div key={index}>
-              {isEditModalOpen && editingItem?.id === item.id ? (
-                <EditItemForm
-                  itemId={editingItem.id}
-                  onClose={handleCloseEditModal}
-                />
+          .map((item) => (
+            <div key={item.id}>
+              {editingItemId === item.id ? (
+                <Modal show={true} onHide={handleCloseEditForm}>
+                  <Modal.Header closeButton>
+                    <Modal.Title>Edit Item</Modal.Title>
+                  </Modal.Header>
+                  <Modal.Body>
+                    <EditItemForm
+                      itemId={editingItemId}
+                      onClose={handleCloseEditForm}
+                    />
+                  </Modal.Body>
+                </Modal>
               ) : (
                 <Card
-                  className="flex-wrap cardMar"
-                  onFavorite={(obj) => onAddToFavorite(obj)}
-                  onPlus={(obj) => onAddToCart(obj)}
-                  onEdit={() => handleEditItem(item.id)}
-                  {...item}
+                  onFavorite={onAddToFavorite}
+                  onPlus={onAddToCart}
+                  onEdit={handleEditItem}
+
                 />
               )}
             </div>

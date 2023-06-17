@@ -94,11 +94,14 @@ function Card({
               className={styles.delete}
               onClick={() => onClickDelete(id)}
               alt="Delete"
+
+
             />
             <img
               width={31}
               height={31}
               src="/img/redactor.svg"
+
               className={styles.editButton} // New CSS class for the edit button
               onClick={onClickEdit} // Call the onClickEdit function on button click
               alt="Edit"

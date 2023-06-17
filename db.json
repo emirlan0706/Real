@@ -13,6 +13,7 @@
       "price": 456782345,
       "category": "Apple watch",
       "id": 14
+
     },
     {
       "title": "rcsafdwFGSERAGSHGSRHRH Apple watch",
@@ -71,11 +72,13 @@
       "id": 3646
     },
     {
+
       "title": "rcsafdwFGSERAGSHGSRHRH Hublot watch",
       "imageUrl": "https://m.media-amazon.com/images/I/41bkz-JbF9L.jpg",
       "price": 456782345,
       "category": "Casio",
       "id": 636
+
     },
     {
       "title": "rcsafdwFGSERAGSHGSRHRH Hublot watch",
@@ -160,6 +163,7 @@
       "price": 456782345,
       "category": "Casio",
       "id": 5868
+
     }
   ],
   "cart": [],

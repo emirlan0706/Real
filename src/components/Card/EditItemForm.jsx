@@ -60,7 +60,9 @@ function EditItemForm({ itemId, onClose }) {
         price: parseInt(price),
         category,
       });
+
       closeModal();
+
     } catch (error) {
       console.log("Error updating item", error);
     }
