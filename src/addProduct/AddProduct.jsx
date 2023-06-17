@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import axios from "axios";
 import styles from "./AddProductForm.module.scss";
 import InputLabel from "@mui/material/InputLabel";
@@ -11,6 +11,7 @@ import AppContext from "../context";
 let APIITEMS = " http://localhost:8000/items";
 
 const AddProductForm = () => {
+  const { cartItems, setCartItems } = useContext(AppContext);
   const [title, setTitle] = useState("");
   const [price, setPrice] = useState("");
   const [imageUrl, setImageUrl] = useState("");
@@ -49,6 +50,7 @@ const AddProductForm = () => {
     axios
       .post(APIITEMS, newProduct)
       .then((response) => {
+        setCartItems([]);
         console.log(response.data);
       })
       .catch((error) => {

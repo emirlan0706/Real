@@ -27,7 +27,7 @@ function Drawer({ onClose, items, onRemove = [], opened }) {
         onRemove(item.id);
       }
     } catch (error) {
-      alert("no way day :(");
+      console.log("vjsdfh,abfcakjfhveahcbaklewhj cajehfc dAj");
     }
   };
 

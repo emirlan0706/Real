@@ -12,13 +12,22 @@ import {
   MenuItem,
 } from "@mui/material";
 
-const customModalStyles = {
+const modalStyles = {
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+};
+
+const formContainerStyles = {
   width: "400px",
-  height: "350px",
+  padding: "40px",
+  backgroundColor: "#F5F5F5",
+};
 
-  border: "none",
-
-  padding: "20px",
+const formStyles = {
+  display: "flex",
+  flexDirection: "column",
+  gap: "10px",
 };
 
 function EditItemForm({ itemId, onClose }) {
@@ -28,7 +37,6 @@ function EditItemForm({ itemId, onClose }) {
   const [category, setCategory] = useState("");
   const [isLoading, setIsLoading] = useState(true);
   const [isModalOpen, setIsModalOpen] = useState(true);
-  const [rest, setRest] = useState([]);
 
   useEffect(() => {
     async function fetchItem() {
@@ -60,10 +68,22 @@ function EditItemForm({ itemId, onClose }) {
         price: parseInt(price),
         category,
       });
+
+      // Update the item data without refreshing the page
+      const updatedItemData = { id: itemId, title, imageUrl, price, category };
+      updateItemData(updatedItemData);
+
       closeModal();
     } catch (error) {
       console.log("Error updating item", error);
     }
+  };
+
+  const updateItemData = (updatedItemData) => {
+    // Perform the necessary logic to update the item data in your component's state or any other state management solution you are using
+    // For example, if you are using React state:
+    // setItems((prevItems) => prevItems.map((item) => (item.id === updatedItemData.id ? updatedItemData : item)));
+    // Replace the above example code with the appropriate logic for updating the item data
   };
 
   const closeModal = () => {
@@ -76,58 +96,43 @@ function EditItemForm({ itemId, onClose }) {
       open={isModalOpen}
       onClose={closeModal}
       aria-labelledby="edit-item-modal-title"
+      style={modalStyles}
     >
-      <Box
-        sx={{
-          ...customModalStyles,
-          backgroundColor: "white",
-          borderColor: "white",
-          marginTop: "110px",
-          marginLeft: "auto",
-          marginRight: "auto",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
+      <Box sx={formContainerStyles}>
         {isLoading ? (
           <Typography variant="body1">Loading...</Typography>
         ) : (
-          <form onSubmit={handleFormSubmit}>
+          <form onSubmit={handleFormSubmit} style={formStyles}>
             <TextField
               label="Title"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
               fullWidth
-              margin="normal"
+              variant="outlined"
             />
             <TextField
               label="Image URL"
               value={imageUrl}
               onChange={(e) => setImageUrl(e.target.value)}
               fullWidth
-              margin="normal"
+              variant="outlined"
             />
             <TextField
               label="Price"
               value={price}
               onChange={(e) => setPrice(e.target.value)}
               fullWidth
-              margin="normal"
+              variant="outlined"
             />
 
-            <FormControl sx={{ m: 1, minWidth: 410 }} size="small">
-              <InputLabel id="demo-select-small-label">Category</InputLabel>
+            <FormControl fullWidth variant="outlined">
+              <InputLabel id="category-label">Category</InputLabel>
               <Select
-                labelId="demo-select-small-label"
+                labelId="category-label"
                 id="category"
                 name="category"
                 value={category}
-                label="Category"
                 onChange={(e) => setCategory(e.target.value)}
-                fullWidth
-                margin="normal"
               >
                 <MenuItem value="">
                   <em>None</em>
@@ -139,20 +144,14 @@ function EditItemForm({ itemId, onClose }) {
               </Select>
             </FormControl>
 
-            <Button
-              sx={{ display: "flex", justifyContent: "flex-end" }}
-              type="submit"
-              variant="contained"
-              color="success"
-            >
+            <Button type="submit" variant="contained" color="primary">
               Save
             </Button>
-            <Button onClick={closeModal} variant="contained" color="error">
+            <Button onClick={closeModal} variant="contained" color="secondary">
               Cancel
             </Button>
           </form>
         )}
-        {setRest}
       </Box>
     </Modal>
   );

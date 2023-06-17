@@ -12,6 +12,8 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 
+import Carousel from "../Carusel/Carusel";
+
 const ITEMS_PER_PAGE = 12;
 
 const Home = ({
@@ -22,6 +24,21 @@ const Home = ({
   onAddToFavorite,
   onAddToCart,
 }) => {
+  const slides = [
+    {
+      image:
+        "https://www.linwear.com/images/admin/upload/20221122/042a48ecdfb367c1a80ff551585d22b8.jpg",
+    },
+    {
+      image:
+        "https://www.goldsmiths.co.uk/medias/watches-hero-breitling-desktop-may23.jpg?context=bWFzdGVyfHJvb3R8MjU2NzU2fGltYWdlL2pwZWd8aGQ5L2gzYS85MjE5NzAyMzI1Mjc4LmpwZ3xlNDZmMmM4YjM2NDgxMmNjNTlkZjBhZDMyMWI4YzU3YjZiY2Y2OTc2ZjMzODMxZGY1ODA1MGM4NWU0MDc5NzQ0&imwidth=1920",
+    },
+    {
+      image:
+        "https://www.goldsmiths.co.uk/medias/gw-preowned-rolex-desktop-may23-1.jpg?context=bWFzdGVyfHJvb3R8Mzk5Nzc5fGltYWdlL2pwZWd8aDk4L2hiMy85MjIyMzQ5MTI3NzEwLmpwZ3xkNDJhZDJlMWUzN2U1ZDg0MGFkYWY0NDNkMzM2YTAyY2E0ZGU1MDJkNjBkZjY4MmJiN2Q0MjdhYjUyNTJkYTE3&imwidth=1920",
+    },
+  ];
+  const backgrounds = ["#FAEBD7", "#B0E0E6", "#D8BFD8"];
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
   const [editingItem, setEditingItem] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
@@ -66,6 +83,7 @@ const Home = ({
 
   return (
     <div className="content p-40">
+      <Carousel slides={slides} backgrounds={backgrounds} />
       <div className="d-flex justify-between align-center mb-40">
         <h1 className="searchAdaptive">
           {searchValue ? `Поиск: ${searchValue}` : "Все часы"}
@@ -104,7 +122,7 @@ const Home = ({
           <img src="/img/search.svg" alt="Search" className="serhico" />
           {searchValue && (
             <img
-              onClick={() => setSearchValue("")}
+              onClick={setSearchValue}
               className="searchAdaptive clear cu-p "
               src="/img/btn-remove.svg"
               alt="Clear"
